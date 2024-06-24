@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Party Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            background-color: #ffcc00;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .content img {
+            width: 50%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .content video {
+            width: 80%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>You're Invited to My Birthday Party!</h1>
+    </div>
+
+    <div class="content">
+        <img src="https://example.com/birthday-cake.jpg" alt="Birthday Cake">
+        <h2>Join the Celebration</h2>
+        <p>Hi friends! I am excited to invite you to my birthday party. Let's have a great time together with fun, games, and lots of cake!</p>
+
+        <h3>Event Details:</h3>
+        <table border="1" width="100%" cellpadding="10">
+            <tr>
+                <th>Date</th>
+                <td>June 15, 2024</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>4:00 PM - 8:00 PM</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>123 Party Lane, Fun Town</td>
+            </tr>
+        </table>
+
+        <h3>Activities:</h3>
+        <ul>
+            <li>Games</li>
+            <li>Music</li>
+            <li>Dance</li>
+            <li>Food and Drinks</li>
+        </ul>
+
+        <h3>Listen to the Party Playlist:</h3>
+        <audio controls>
+            <source src="https://example.com/party-playlist.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Check Out Last Year's Party Video:</h3>
+        <video controls>
+            <source src="https://example.com/last-years-party.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+
+        <h3>RSVP:</h3>
+        <form id="rsvpForm" onsubmit="return validateRSVP()">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name">
+                <div class="error" id="nameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email">
+                <div class="error" id="emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+                <div class="error" id="messageError"></div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Birthday Party Invitation. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    function validateRSVP() {
+        let isValid = true;
+
+        // Clear previous errors
+        document.getElementById('nameError').innerText = '';
+        document.getElementById('emailError').innerText = '';
+        document.getElementById('messageError').innerText = '';
+
+        // Name validation
+        const name = document.getElementById('name').value;
+        if (name === '') {
+            document.getElementById('nameError').innerText = 'Name is required';
+            isValid = false;
+        }
+
+        // Email validation
+        const email = document.getElementById('email').value;
+        if (email === '') {
+            document.getElementById('emailError').innerText = 'Email is required';
+            isValid = false;
+        }
+
+        // Message validation
+        const message = document.getElementById('message').value;
+        if (message === '') {
+            document.getElementById('messageError').innerText = 'Message is required';
+            isValid = false;
+        }
+
+        return isValid;
+    }
+</script>
+
+</body>
+</html>
